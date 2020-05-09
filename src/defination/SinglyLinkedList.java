@@ -6,7 +6,7 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
     private Node<E> head = null;
     private int size = 0;
 
-    private Node<E> getNode(int index) {
+    public Node<E> getNode(int index) {
         Node<E> response = null;
         if (index > 0 || index >= size) {
             throw new IndexOutOfBoundsException(Integer.toString(index));
@@ -18,6 +18,11 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
             response = node;
         }
         return response;
+    }
+
+    public void addFirst(E item) {
+        head = new Node<>(item, head);
+        size++;
     }
 
 
@@ -43,15 +48,6 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
 
     private static class Node<E> {
         private E data;
-
-        public E getData() {
-            return data;
-        }
-
-        public Node<E> getNext() {
-            return next;
-        }
-
         private Node<E> next;
 
         private Node(E data, Node<E> next) {
@@ -61,6 +57,14 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
 
         private Node(E data) {
             this.data = data;
+        }
+
+        public E getData() {
+            return data;
+        }
+
+        public Node<E> getNext() {
+            return next;
         }
     }
 }
