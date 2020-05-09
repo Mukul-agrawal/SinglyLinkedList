@@ -71,8 +71,14 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
         }
     }
 
-    public E removeAfter(int index) {
-        Node<E> node = getNode(index - 1);
+    public E removeAfter(E item) {
+        Node<E> node = null;
+        for (int i = 0; i < size; i++) {
+            if (item.equals(getNode(i).data)) {
+                node = getNode(i - 1);
+                break;
+            }
+        }
         if (node.next != null) {
             node.next = node.next.next;
             size--;
@@ -93,6 +99,17 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
         }
     }
 
+    public int searchItem(E item) {
+        int response = -1;
+        for (int i = 0; i < size; i++) {
+            if (item.equals(getNode(i).data)) {
+                response = 0;
+                break;
+            }
+        }
+        return response;
+    }
+
 
     @Override
     public void add(E item) {
@@ -100,13 +117,14 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
     }
 
     @Override
-    public E remove(E item) {
-        return null;
+    public E remove() {
+        return remove(size - 1);
     }
 
     @Override
     public int search(E item) {
-        return 0;
+
+        return searchItem(item);
     }
 
     @Override
