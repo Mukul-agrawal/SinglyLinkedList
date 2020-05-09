@@ -57,6 +57,15 @@ public class Main {
                             break;
                     }
                     break;
+                case 3:
+                    System.out.println("Enter the item to search :");
+                    item = scanner.nextLine();
+                    if (stringSinglyLinkedList.search(item) == 0)
+                        System.out.println("Item found");
+                    else
+                        System.out.println("Item not found!");
+                    break;
+
 
             }
 
