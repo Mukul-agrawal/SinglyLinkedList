@@ -110,6 +110,10 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
         return response;
     }
 
+    public int size() {
+        return size;
+    }
+
 
     @Override
     public void add(E item) {
