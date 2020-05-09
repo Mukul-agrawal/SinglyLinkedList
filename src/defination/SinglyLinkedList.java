@@ -46,10 +46,21 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
         size++;
     }
 
+    public E removeFirst() {
+        Node<E> node = head;
+        if (head != null) {
+            head = head.next;
+            size--;
+            return node.getData();
+        } else {
+            return null;
+        }
+    }
+
 
     @Override
     public void add(E item) {
-
+        add(size, item);
     }
 
     @Override
