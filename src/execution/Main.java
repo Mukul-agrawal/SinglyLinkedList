@@ -65,7 +65,9 @@ public class Main {
                     else
                         System.out.println("Item not found!");
                     break;
-
+                case 4:
+                    stringSinglyLinkedList.print();
+                    break;
 
             }
 
