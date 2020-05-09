@@ -3,6 +3,8 @@ package defination;
 import adt.SinglyLinkedListADT;
 
 public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
+    private Node<E> head = null;
+
 
     @Override
     public void add(E item) {
@@ -28,12 +30,12 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
         private E data;
         private Node<E> next;
 
-        public Node(E data, Node<E> next) {
+        private Node(E data, Node<E> next) {
             this.data = data;
             this.next = next;
         }
 
-        public Node(E data) {
+        private Node(E data) {
             this.data = data;
         }
     }
