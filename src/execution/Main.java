@@ -38,6 +38,25 @@ public class Main {
                             break;
                     }
                     break;
+                case 2:
+                    System.out.println("Press 1 to remove a node from first :");
+                    System.out.println("Press 2 to remove a node from middle :");
+                    System.out.println("Press 3 to remove a node from last :");
+                    option = Integer.parseInt(scanner.nextLine());
+                    switch (option) {
+                        case 1:
+                            stringSinglyLinkedList.removeFirst();
+                            break;
+                        case 2:
+                            System.out.println("Enter the item :");
+                            item = scanner.nextLine();
+                            stringSinglyLinkedList.removeAfter(item);
+                            break;
+                        case 3:
+                            stringSinglyLinkedList.remove();
+                            break;
+                    }
+                    break;
 
             }
 
