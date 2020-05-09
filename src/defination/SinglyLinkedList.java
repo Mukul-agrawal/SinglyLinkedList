@@ -13,7 +13,7 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
         } else {
             Node<E> node = head;
             for (int i = 0; i < index && node != null; i++) {
-                node = node.getNext();
+                node = node.next;
             }
             response = node;
         }
@@ -51,7 +51,18 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
         if (head != null) {
             head = head.next;
             size--;
-            return node.getData();
+            return node.data;
+        } else {
+            return null;
+        }
+    }
+
+    public E removeAfter(int index) {
+        Node<E> node = getNode(index - 1);
+        if (node.next != null) {
+            node.next = node.next.next;
+            size--;
+            return node.next.data;
         } else {
             return null;
         }
