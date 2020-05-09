@@ -6,4 +6,6 @@ public interface SinglyLinkedListADT<E> {
     E remove(E item);
 
     int search(E item);
+
+    void print();
 }
