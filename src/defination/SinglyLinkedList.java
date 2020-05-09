@@ -133,6 +133,12 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
 
     @Override
     public void print() {
+        System.out.println("[");
+        for (int i = 0; i < size; i++) {
+            E data = getNode(i).data;
+            System.out.println(data + (i < size - 1 ? "," : ""));
+        }
+        System.out.println("]");
 
     }
 
