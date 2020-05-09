@@ -31,6 +31,11 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
         size++;
     }
 
+    public void addLast(Node<E> node, E item) {
+        node.next = new Node<>(item, node.next);
+        size++;
+    }
+
 
     @Override
     public void add(E item) {
