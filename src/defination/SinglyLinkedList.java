@@ -3,6 +3,7 @@ package defination;
 import adt.SinglyLinkedListADT;
 
 public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
+
     @Override
     public void add(E item) {
 
@@ -20,6 +21,10 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
 
     @Override
     public void print() {
+
+    }
+
+    private static class Node {
 
     }
 }
