@@ -46,6 +46,7 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
         size++;
     }
 
+
     public E removeFirst() {
         Node<E> node = head;
         if (head != null) {
@@ -63,6 +64,17 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
             node.next = node.next.next;
             size--;
             return node.next.data;
+        } else {
+            return null;
+        }
+    }
+
+    public E removeLast(Node<E> node) {
+        Node<E> temp = node.next;
+        if (temp != null) {
+            node.next = temp.next;
+            size--;
+            return temp.data;
         } else {
             return null;
         }
