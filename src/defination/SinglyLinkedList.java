@@ -8,7 +8,7 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
 
     public Node<E> getNode(int index) {
         Node<E> response = null;
-        if (index > 0 || index >= size) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException(Integer.toString(index));
         } else {
             Node<E> node = head;
@@ -121,8 +121,8 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
     }
 
     @Override
-    public E remove() {
-        return remove(size - 1);
+    public void remove() {
+        remove(size - 1);
     }
 
     @Override
@@ -133,10 +133,10 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
 
     @Override
     public void print() {
-        System.out.println("[");
+        System.out.print("[");
         for (int i = 0; i < size; i++) {
             E data = getNode(i).data;
-            System.out.println(data + (i < size - 1 ? "," : ""));
+            System.out.print(data + (i < size - 1 ? "," : ""));
         }
         System.out.println("]");
 
