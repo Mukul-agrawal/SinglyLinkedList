@@ -46,6 +46,19 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
         size++;
     }
 
+    public E remove(int index) {
+        E response = null;
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException(Integer.toString(index));
+        } else if (index == 0) {
+            response = removeFirst();
+        } else {
+            Node<E> previousNode = getNode(index - 1);
+            response = removeLast(previousNode);
+        }
+        return response;
+    }
+
 
     public E removeFirst() {
         Node<E> node = head;
