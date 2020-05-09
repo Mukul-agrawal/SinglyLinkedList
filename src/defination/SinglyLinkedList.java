@@ -4,6 +4,7 @@ import adt.SinglyLinkedListADT;
 
 public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
     private Node<E> head = null;
+    private int size = 0;
 
 
     @Override
