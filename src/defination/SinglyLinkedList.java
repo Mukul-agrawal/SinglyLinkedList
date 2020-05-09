@@ -20,6 +20,16 @@ public class SinglyLinkedList<E> implements SinglyLinkedListADT<E> {
         return response;
     }
 
+    public void add(int index, E item) {
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException(Integer.toString(index));
+        if (index == 0)
+            addFirst(item);
+        else
+            addLast(getNode(index - 1), item);
+    }
+
+
     public void addFirst(E item) {
         head = new Node<>(item, head);
         size++;
