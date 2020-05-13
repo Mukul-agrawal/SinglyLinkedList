@@ -9,7 +9,7 @@ public class Main {
         SinglyLinkedList<String> stringSinglyLinkedList = new SinglyLinkedList<>();
         final Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("Press 1 to insert a item :");
+            System.out.println("\n" + "Press 1 to insert a item :");
             System.out.println("Press 2 to remove a item :");
             System.out.println("Press 3 to search a item :");
             System.out.println("Press 4 to print the LinkedList :");
@@ -39,7 +39,9 @@ public class Main {
                                 stringSinglyLinkedList.add(item);
                                 break;
                         }
-                        System.out.println("Do you want to insert another item : (y/n)");
+                        System.out.print("LinkedList : ");
+                        stringSinglyLinkedList.print();
+                        System.out.println("\n" + "Do you want to insert another item : (y/n)");
                         if (scanner.nextLine().equals("n"))
                             flag = false;
                     }
@@ -64,7 +66,9 @@ public class Main {
                                 stringSinglyLinkedList.remove();
                                 break;
                         }
-                        System.out.println("Do you want to remove another item : (y/n)");
+                        System.out.print("LinkedList : ");
+                        stringSinglyLinkedList.print();
+                        System.out.println("\n" + "Do you want to remove another item : (y/n)");
                         if (scanner.nextLine().equals("n"))
                             flag = false;
                     }
@@ -78,12 +82,11 @@ public class Main {
                         System.out.println("Item not found!" + "\n");
                     break;
                 case 4:
+                    System.out.print("LinkedList : ");
                     stringSinglyLinkedList.print();
-                    System.out.println();
                     break;
                 case 5:
                     System.out.println("Size of LinkedList : " + stringSinglyLinkedList.size());
-                    System.out.println();
                     break;
                 case 6:
                     System.exit(0);
